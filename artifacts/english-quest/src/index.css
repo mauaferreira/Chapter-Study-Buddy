@@ -1,0 +1,316 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-border: var(--primary-border);
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-border: var(--secondary-border);
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-muted-border: var(--muted-border);
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-border: var(--accent-border);
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive-border: var(--destructive-border);
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --color-sun: hsl(var(--sun));
+  --color-sky: hsl(var(--sky));
+  --color-leaf: hsl(var(--leaf));
+  --color-coral: hsl(var(--coral));
+  --color-grape: hsl(var(--grape));
+
+  --font-sans: var(--app-font-sans);
+  --font-display: var(--app-font-display);
+  --font-mono: var(--app-font-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* LIGHT MODE - playful, joyful, kid-friendly */
+:root {
+  --button-outline: rgba(0,0,0, .10);
+  --badge-outline: rgba(0,0,0, .05);
+  --opaque-button-border-intensity: -8;
+  --elevate-1: rgba(0,0,0, .04);
+  --elevate-2: rgba(0,0,0, .09);
+
+  /* Warm cream background like a children's picture book */
+  --background: 38 60% 96%;
+  --foreground: 230 35% 22%;
+  --border: 32 40% 85%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 230 35% 22%;
+  --card-border: 32 40% 85%;
+
+  --sidebar: 38 60% 96%;
+  --sidebar-foreground: 230 35% 22%;
+  --sidebar-border: 32 40% 85%;
+  --sidebar-primary: 200 85% 55%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 38 70% 92%;
+  --sidebar-accent-foreground: 230 35% 22%;
+  --sidebar-ring: 200 85% 55%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 230 35% 22%;
+  --popover-border: 32 40% 85%;
+
+  /* Sky blue primary */
+  --primary: 200 85% 55%;
+  --primary-foreground: 0 0% 100%;
+
+  /* Coral secondary */
+  --secondary: 14 90% 65%;
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 38 30% 92%;
+  --muted-foreground: 230 15% 45%;
+
+  /* Sunny yellow accent */
+  --accent: 42 95% 60%;
+  --accent-foreground: 230 35% 22%;
+
+  --destructive: 0 80% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --input: 32 40% 85%;
+  --ring: 200 85% 55%;
+
+  /* Activity colors */
+  --sun: 42 95% 60%;        /* yellow */
+  --sky: 200 85% 55%;       /* blue */
+  --leaf: 145 55% 50%;      /* green */
+  --coral: 14 90% 65%;      /* coral */
+  --grape: 270 60% 65%;     /* purple */
+
+  --chart-1: 200 85% 55%;
+  --chart-2: 42 95% 60%;
+  --chart-3: 145 55% 50%;
+  --chart-4: 14 90% 65%;
+  --chart-5: 270 60% 65%;
+
+  --app-font-sans: 'Nunito', 'Inter', sans-serif;
+  --app-font-display: 'Fredoka', 'Nunito', sans-serif;
+  --app-font-mono: Menlo, monospace;
+
+  /* Big rounded shapes for kid-friendliness */
+  --radius: 1.25rem; /* 20px */
+
+  --shadow-2xs: 0px 2px 0px 0px hsl(200 85% 55% / 0.10);
+  --shadow-xs: 0px 3px 0px 0px hsl(200 85% 55% / 0.10);
+  --shadow-sm: 0px 4px 0px 0px hsl(200 85% 55% / 0.12), 0px 2px 4px -1px hsl(200 85% 55% / 0.08);
+  --shadow: 0px 4px 0px 0px hsl(200 85% 55% / 0.15), 0px 2px 6px -1px hsl(200 85% 55% / 0.10);
+  --shadow-md: 0px 5px 0px 0px hsl(200 85% 55% / 0.15), 0px 4px 10px -1px hsl(200 85% 55% / 0.12);
+  --shadow-lg: 0px 6px 0px 0px hsl(200 85% 55% / 0.15), 0px 8px 16px -1px hsl(200 85% 55% / 0.15);
+  --shadow-xl: 0px 8px 0px 0px hsl(200 85% 55% / 0.15), 0px 12px 24px -1px hsl(200 85% 55% / 0.18);
+  --shadow-2xl: 0px 10px 0px 0px hsl(200 85% 55% / 0.18);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+}
+
+.dark {
+  --button-outline: rgba(255,255,255, .10);
+  --badge-outline: rgba(255,255,255, .05);
+  --opaque-button-border-intensity: 9;
+  --elevate-1: rgba(255,255,255, .04);
+  --elevate-2: rgba(255,255,255, .09);
+
+  --background: 230 25% 12%;
+  --foreground: 38 60% 96%;
+  --border: 230 20% 22%;
+  --card: 230 25% 16%;
+  --card-foreground: 38 60% 96%;
+  --card-border: 230 20% 22%;
+  --sidebar: 230 25% 12%;
+  --sidebar-foreground: 38 60% 96%;
+  --sidebar-border: 230 20% 22%;
+  --sidebar-primary: 200 85% 55%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 230 20% 22%;
+  --sidebar-accent-foreground: 38 60% 96%;
+  --sidebar-ring: 200 85% 55%;
+  --popover: 230 25% 16%;
+  --popover-foreground: 38 60% 96%;
+  --popover-border: 230 20% 22%;
+  --primary: 200 85% 55%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 14 90% 65%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 230 20% 22%;
+  --muted-foreground: 230 15% 70%;
+  --accent: 42 95% 60%;
+  --accent-foreground: 230 35% 22%;
+  --destructive: 0 80% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 230 20% 22%;
+  --ring: 200 85% 55%;
+  --sun: 42 95% 60%;
+  --sky: 200 85% 55%;
+  --leaf: 145 55% 50%;
+  --coral: 14 90% 65%;
+  --grape: 270 60% 65%;
+  --chart-1: 200 85% 55%;
+  --chart-2: 42 95% 60%;
+  --chart-3: 145 55% 50%;
+  --chart-4: 14 90% 65%;
+  --chart-5: 270 60% 65%;
+
+  --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.20);
+  --shadow-xs: 0px 3px 0px 0px hsl(0 0% 0% / 0.25);
+  --shadow-sm: 0px 4px 0px 0px hsl(0 0% 0% / 0.30), 0px 2px 4px -1px hsl(0 0% 0% / 0.20);
+  --shadow: 0px 4px 0px 0px hsl(0 0% 0% / 0.30), 0px 2px 6px -1px hsl(0 0% 0% / 0.25);
+  --shadow-md: 0px 5px 0px 0px hsl(0 0% 0% / 0.30), 0px 4px 10px -1px hsl(0 0% 0% / 0.30);
+  --shadow-lg: 0px 6px 0px 0px hsl(0 0% 0% / 0.30), 0px 8px 16px -1px hsl(0 0% 0% / 0.35);
+  --shadow-xl: 0px 8px 0px 0px hsl(0 0% 0% / 0.30), 0px 12px 24px -1px hsl(0 0% 0% / 0.40);
+  --shadow-2xl: 0px 10px 0px 0px hsl(0 0% 0% / 0.35);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    background-image:
+      radial-gradient(circle at 10% 10%, hsl(42 95% 60% / 0.08) 0%, transparent 35%),
+      radial-gradient(circle at 90% 20%, hsl(200 85% 55% / 0.08) 0%, transparent 35%),
+      radial-gradient(circle at 80% 90%, hsl(14 90% 65% / 0.08) 0%, transparent 35%),
+      radial-gradient(circle at 20% 80%, hsl(145 55% 50% / 0.08) 0%, transparent 35%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--app-font-display);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  input[type="search"]::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+
+  .no-default-hover-elevate {}
+  .no-default-active-elevate {}
+
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: 999;
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
+    inset: -1px;
+  }
+}

@@ -1,0 +1,122 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "sWs1trzFctOGWd4L5G00g"
+uri = "file://artifacts/english-quest/src/assets/images/bedroom.png"
+type = "image"
+title = "bedroom illustration"
+
+[[generated]]
+id = "jciie8mSIarGBF-P_hwXz"
+uri = "file://artifacts/english-quest/src/assets/images/bathroom.png"
+type = "image"
+title = "bathroom illustration"
+
+[[generated]]
+id = "_DC-ZSjc1P2GPZ6molmH5"
+uri = "file://artifacts/english-quest/src/assets/images/kitchen.png"
+type = "image"
+title = "kitchen illustration"
+
+[[generated]]
+id = "0Ktegxn4w5Qp1SRqso463"
+uri = "file://artifacts/english-quest/src/assets/images/living-room.png"
+type = "image"
+title = "living room illustration"
+
+[[generated]]
+id = "JIEZsjdUqF8OwG-iWKqT2"
+uri = "file://artifacts/english-quest/src/assets/images/dining-room.png"
+type = "image"
+title = "dining room illustration"
+
+[[generated]]
+id = "99wsBaKFEi_DvwF6aKqrh"
+uri = "file://artifacts/english-quest/src/assets/images/garage.png"
+type = "image"
+title = "garage illustration"
+
+[[generated]]
+id = "gm1KIAUVVWuRUEceHFou-"
+uri = "file://artifacts/english-quest/src/assets/images/garden.png"
+type = "image"
+title = "garden illustration"
+
+[[generated]]
+id = "roHxND6kKCEiddXnhMzrB"
+uri = "file://artifacts/english-quest/src/assets/images/bed.png"
+type = "image"
+title = "bed illustration"
+
+[[generated]]
+id = "iRieRPasw5QLYBQlQhAXO"
+uri = "file://artifacts/english-quest/src/assets/images/table.png"
+type = "image"
+title = "table illustration"
+
+[[generated]]
+id = "xBo3ewCM7k2Qp0Zp8nqjH"
+uri = "file://artifacts/english-quest/src/assets/images/chair.png"
+type = "image"
+title = "chair illustration"
+
+[[generated]]
+id = "jdvUvjvMibmVRgysRvyZB"
+uri = "file://artifacts/english-quest/src/assets/images/hall.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "GMF3ZYuUD0eX_ee7ZSl4r"
+uri = "file://artifacts/english-quest/src/assets/images/sofa.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "SkAD2m7xhvwC20iAE9Qcn"
+uri = "file://artifacts/english-quest/src/assets/images/lamp.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "dTs2OcshrLYKj1vQB9YqI"
+uri = "file://artifacts/english-quest/src/assets/images/shelf.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "QvWeQj67IJuQKA4Ryzn9J"
+uri = "file://artifacts/english-quest/src/assets/images/rug.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "WlmJNZ45jhttr8lKRU8tO"
+uri = "file://artifacts/english-quest/src/assets/images/wardrobe.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "WtNawBOQPOkYjXtgIggMI"
+uri = "file://artifacts/english-quest/src/assets/images/mirror.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "hZggC_pqVdkkhrmtA0NZY"
+uri = "file://artifacts/english-quest/src/assets/images/tv.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "d-vREWvWtsAPUOyLsC-FM"
+uri = "file://artifacts/english-quest/src/assets/images/door.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "3O6JVf7V0ajeFDHaRaJJq"
+uri = "file://artifacts/english-quest/src/assets/images/window.png"
+type = "image"
+title = "generated_image"

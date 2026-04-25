@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "English Quest - Unit 3"
+version = "1.0.0"
+id = "artifacts/english-quest"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18289
+
+[services.development]
+run = "pnpm --filter @workspace/english-quest run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/english-quest", "run", "build" ]
+publicDir = "artifacts/english-quest/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18289"
+BASE_PATH = "/"
