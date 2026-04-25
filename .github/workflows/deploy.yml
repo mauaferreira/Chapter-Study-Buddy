@@ -43,7 +43,7 @@ jobs:
         env:
           BASE_PATH: "/Chapter-Study-Buddy/"
           PORT: "3000"
-        run: pnpm -F @workspace/english-quest run build
+        run: pnpm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
