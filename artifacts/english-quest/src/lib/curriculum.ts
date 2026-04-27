@@ -18,8 +18,15 @@ import mirrorImg from "@/assets/images/mirror.png";
 import tvImg from "@/assets/images/tv.png";
 import doorImg from "@/assets/images/door.png";
 import windowImg from "@/assets/images/window.png";
+// New – Chapter 3 vocabulary
+import armchairImg from "@/assets/images/armchair.png";
+import deskImg from "@/assets/images/desk.png";
+import cupboardImg from "@/assets/images/cupboard.png";
+import bookcaseImg from "@/assets/images/bookcase.png";
+import fridgeImg from "@/assets/images/fridge.png";
+import cookerImg from "@/assets/images/cooker.png";
 
-export type VocabCategory = "room" | "furniture" | "object" | "animal";
+export type VocabCategory = "room" | "furniture" | "object" | "appliance";
 
 export interface VocabItem {
   word: string;
@@ -29,7 +36,7 @@ export interface VocabItem {
 }
 
 export const VOCAB: VocabItem[] = [
-  // Rooms
+  // Rooms – Unit 3: Where we live
   { word: "bedroom", translation: "quarto", image: bedroomImg, category: "room" },
   { word: "bathroom", translation: "banheiro", image: bathroomImg, category: "room" },
   { word: "kitchen", translation: "cozinha", image: kitchenImg, category: "room" },
@@ -37,18 +44,26 @@ export const VOCAB: VocabItem[] = [
   { word: "dining room", translation: "sala de jantar", image: diningRoomImg, category: "room" },
   { word: "garage", translation: "garagem", image: garageImg, category: "room" },
   { word: "garden", translation: "jardim", image: gardenImg, category: "room" },
-  { word: "hall", translation: "corredor", image: hallImg, category: "room" },
-  // Furniture
+  { word: "hall", translation: "corredor / entrada", image: hallImg, category: "room" },
+  // Furniture – Unit 3: Where we live
   { word: "bed", translation: "cama", image: bedImg, category: "furniture" },
   { word: "table", translation: "mesa", image: tableImg, category: "furniture" },
   { word: "chair", translation: "cadeira", image: chairImg, category: "furniture" },
   { word: "sofa", translation: "sofá", image: sofaImg, category: "furniture" },
+  { word: "armchair", translation: "poltrona", image: armchairImg, category: "furniture" },
+  { word: "desk", translation: "escrivaninha", image: deskImg, category: "furniture" },
   { word: "lamp", translation: "luminária", image: lampImg, category: "furniture" },
   { word: "shelf", translation: "prateleira", image: shelfImg, category: "furniture" },
+  { word: "bookcase", translation: "estante de livros", image: bookcaseImg, category: "furniture" },
   { word: "rug", translation: "tapete", image: rugImg, category: "furniture" },
   { word: "wardrobe", translation: "guarda-roupa", image: wardrobeImg, category: "furniture" },
   { word: "mirror", translation: "espelho", image: mirrorImg, category: "furniture" },
   { word: "TV", translation: "televisão", image: tvImg, category: "furniture" },
+  // Appliances – Unit 3: Where we live
+  { word: "fridge", translation: "geladeira", image: fridgeImg, category: "appliance" },
+  { word: "cooker", translation: "fogão", image: cookerImg, category: "appliance" },
+  { word: "cupboard", translation: "armário (cozinha)", image: cupboardImg, category: "appliance" },
+  // Objects
   { word: "door", translation: "porta", image: doorImg, category: "object" },
   { word: "window", translation: "janela", image: windowImg, category: "object" },
 ];
@@ -91,7 +106,11 @@ export interface PrepositionScene {
     | "behind-chair"
     | "in-front-sofa"
     | "between"
-    | "on-shelf";
+    | "on-shelf"
+    | "next-to-fridge"
+    | "under-desk"
+    | "on-bookcase"
+    | "behind-armchair";
   sentenceParts: [string, string]; // before blank, after blank
   fullSentence: string;
   answer: Preposition;
@@ -118,8 +137,8 @@ export const PREPOSITION_SCENES: PrepositionScene[] = [
   {
     id: "in-box",
     sceneKey: "in-box",
-    sentenceParts: ["The book is", "the box."],
-    fullSentence: "The book is in the box.",
+    sentenceParts: ["The ball is", "the box."],
+    fullSentence: "The ball is in the box.",
     answer: "in",
     distractors: ["on", "behind"],
   },
@@ -134,34 +153,67 @@ export const PREPOSITION_SCENES: PrepositionScene[] = [
   {
     id: "behind-chair",
     sceneKey: "behind-chair",
-    sentenceParts: ["The ball is", "the chair."],
-    fullSentence: "The ball is behind the chair.",
+    sentenceParts: ["The bag is", "the chair."],
+    fullSentence: "The bag is behind the chair.",
     answer: "behind",
     distractors: ["on", "in front of"],
   },
   {
     id: "in-front-sofa",
     sceneKey: "in-front-sofa",
-    sentenceParts: ["The TV is", "the sofa."],
-    fullSentence: "The TV is in front of the sofa.",
+    sentenceParts: ["The rug is", "the sofa."],
+    fullSentence: "The rug is in front of the sofa.",
     answer: "in front of",
     distractors: ["behind", "between"],
   },
   {
     id: "between",
     sceneKey: "between",
-    sentenceParts: ["The mirror is", "the window and the door."],
-    fullSentence: "The mirror is between the window and the door.",
+    sentenceParts: ["The door is", "the window and the wardrobe."],
+    fullSentence: "The door is between the window and the wardrobe.",
     answer: "between",
     distractors: ["on", "next to"],
   },
   {
     id: "on-shelf",
     sceneKey: "on-shelf",
-    sentenceParts: ["The basket is", "the shelf."],
-    fullSentence: "The basket is on the shelf.",
+    sentenceParts: ["The books are", "the shelf."],
+    fullSentence: "The books are on the shelf.",
     answer: "on",
     distractors: ["in", "under"],
+  },
+  // New scenes using Chapter 3 vocabulary
+  {
+    id: "next-to-fridge",
+    sceneKey: "next-to-fridge",
+    sentenceParts: ["The cooker is", "the fridge."],
+    fullSentence: "The cooker is next to the fridge.",
+    answer: "next to",
+    distractors: ["on", "behind"],
+  },
+  {
+    id: "under-desk",
+    sceneKey: "under-desk",
+    sentenceParts: ["The rug is", "the desk."],
+    fullSentence: "The rug is under the desk.",
+    answer: "under",
+    distractors: ["on", "in front of"],
+  },
+  {
+    id: "on-bookcase",
+    sceneKey: "on-bookcase",
+    sentenceParts: ["The mirror is", "the bookcase."],
+    fullSentence: "The mirror is on the bookcase.",
+    answer: "on",
+    distractors: ["under", "between"],
+  },
+  {
+    id: "behind-armchair",
+    sceneKey: "behind-armchair",
+    sentenceParts: ["The lamp is", "the armchair."],
+    fullSentence: "The lamp is behind the armchair.",
+    answer: "behind",
+    distractors: ["next to", "in front of"],
   },
 ];
 
@@ -180,7 +232,7 @@ export const PREPOSITION_QUESTIONS: PrepositionQuestion[] = PREPOSITION_SCENES.m
   preposition: s.answer,
 }));
 
-// Does / Doesn't yes-no questions
+// Does / Doesn't yes-no questions – Unit 3: Where we live
 export interface DoesDoesntQuestion {
   id: string;
   image: string;
@@ -224,12 +276,28 @@ export const DOES_DOESNT_QUESTIONS: DoesDoesntQuestion[] = [
     hintPt: "O carro fica na garagem?",
   },
   {
-    id: "tree-kitchen",
+    id: "fridge-kitchen",
     image: kitchenImg,
-    question: "Does a tree grow in the kitchen?",
+    question: "Does the fridge go in the kitchen?",
+    answer: "yes",
+    fullAnswer: "Yes, it does.",
+    hintPt: "A geladeira fica na cozinha?",
+  },
+  {
+    id: "cooker-kitchen",
+    image: kitchenImg,
+    question: "Does the cooker go in the kitchen?",
+    answer: "yes",
+    fullAnswer: "Yes, it does.",
+    hintPt: "O fogão fica na cozinha?",
+  },
+  {
+    id: "fridge-bedroom",
+    image: bedroomImg,
+    question: "Does the fridge go in the bedroom?",
     answer: "no",
     fullAnswer: "No, it doesn't.",
-    hintPt: "Uma árvore cresce na cozinha?",
+    hintPt: "A geladeira fica no quarto?",
   },
   {
     id: "table-dining",
@@ -248,14 +316,6 @@ export const DOES_DOESNT_QUESTIONS: DoesDoesntQuestion[] = [
     hintPt: "Flores crescem no jardim?",
   },
   {
-    id: "bath-kitchen",
-    image: kitchenImg,
-    question: "Does the bath go in the kitchen?",
-    answer: "no",
-    fullAnswer: "No, it doesn't.",
-    hintPt: "A banheira fica na cozinha?",
-  },
-  {
     id: "wardrobe-bedroom",
     image: bedroomImg,
     question: "Does the wardrobe go in the bedroom?",
@@ -264,12 +324,36 @@ export const DOES_DOESNT_QUESTIONS: DoesDoesntQuestion[] = [
     hintPt: "O guarda-roupa fica no quarto?",
   },
   {
-    id: "fridge-bathroom",
-    image: bathroomImg,
-    question: "Does the fridge go in the bathroom?",
+    id: "armchair-livingroom",
+    image: livingRoomImg,
+    question: "Does the armchair go in the living room?",
+    answer: "yes",
+    fullAnswer: "Yes, it does.",
+    hintPt: "A poltrona fica na sala de estar?",
+  },
+  {
+    id: "bookcase-kitchen",
+    image: kitchenImg,
+    question: "Does the bookcase go in the kitchen?",
     answer: "no",
     fullAnswer: "No, it doesn't.",
-    hintPt: "A geladeira fica no banheiro?",
+    hintPt: "A estante fica na cozinha?",
+  },
+  {
+    id: "desk-bedroom",
+    image: bedroomImg,
+    question: "Does the desk go in the bedroom?",
+    answer: "yes",
+    fullAnswer: "Yes, it does.",
+    hintPt: "A escrivaninha fica no quarto?",
+  },
+  {
+    id: "cooker-bathroom",
+    image: bathroomImg,
+    question: "Does the cooker go in the bathroom?",
+    answer: "no",
+    fullAnswer: "No, it doesn't.",
+    hintPt: "O fogão fica no banheiro?",
   },
 ];
 
@@ -360,18 +444,25 @@ export function buildQuiz(): QuizQuestion[] {
   return questions.sort(() => Math.random() - 0.5);
 }
 
-// Words for unscramble — start short and easy, get longer
+// Words for unscramble — Unit 3: Where we live
+// Ordered from short/easy to long/harder
 export const UNSCRAMBLE_WORDS = [
   getVocab("bed"),
-  getVocab("TV"),
   getVocab("rug"),
   getVocab("lamp"),
-  getVocab("door"),
   getVocab("sofa"),
+  getVocab("desk"),
+  getVocab("door"),
   getVocab("chair"),
   getVocab("table"),
+  getVocab("fridge"),
   getVocab("mirror"),
+  getVocab("cooker"),
   getVocab("garden"),
   getVocab("kitchen"),
   getVocab("bedroom"),
+  getVocab("cupboard"),
+  getVocab("armchair"),
+  getVocab("bookcase"),
+  getVocab("wardrobe"),
 ];
